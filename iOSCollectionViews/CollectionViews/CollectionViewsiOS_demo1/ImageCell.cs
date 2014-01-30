@@ -9,36 +9,40 @@ using MonoTouch.UIKit;
 namespace CollectionViewDemo
 {
 	// TODO: Step 1d: build a custom cell
-//	public class ImageCell : UICollectionViewCell
-//	{
-//		UIImageView imageView;
-//
-//		[Export ("initWithFrame:")]
-//		ImageCell (RectangleF frame) : base (frame)
-//		{
-//			// create an image view to use in the cell
-//			imageView = new UIImageView (new RectangleF (0, 0, 100, 100)); 
-//			imageView.ContentMode = UIViewContentMode.ScaleAspectFit;
-//
-//			// populate the content view
-//			ContentView.AddSubview (imageView);
-//
-//			// scale the content view down so that the background view is visible, effecively as a border
-//			ContentView.Transform = CGAffineTransform.MakeScale (0.9f, 0.9f);
-//
-//			// background view displays behind content view and selected background view
-//			BackgroundView = new UIView{BackgroundColor = UIColor.Black};
-//
-//			// selected background view displays over background view when cell is selected
-//			SelectedBackgroundView = new UIView{BackgroundColor = UIColor.Yellow};
-//		}
-//
-//		internal void UpdateImage (string path)
-//		{
-//			using (var image = UIImage.FromFile(path)) {
-//				imageView.Image = image;
-//			}
-//		}
-//	}
+	public class ImageCell : UICollectionViewCell
+	{
+		UIImageView imageView;
+
+		// NOTE:  required because the objective-c runtime calls initWithFrame because
+		//        obj-c does not have constructors basically.
+		[Export("initWithFrame:")]
+		ImageCell(RectangleF frame) : base(frame)
+		{
+			// create an image view to use in the cell
+			imageView = new UIImageView(new RectangleF(0, 0, 100, 100)); 
+			imageView.ContentMode = UIViewContentMode.ScaleAspectFit;
+
+			// populate the content view
+			ContentView.AddSubview(imageView);
+
+			// scale the content view down so that the background view is visible, effecively as a border
+			// NOTE:  scale content view effectively 90% of the size.
+			ContentView.Transform = CGAffineTransform.MakeScale(0.9f, 0.9f);
+
+			// background view displays behind content view and selected background view
+			BackgroundView = new UIView { BackgroundColor = UIColor.Black };
+
+			// selected background view displays over background view when cell is selected
+			SelectedBackgroundView = new UIView(){ BackgroundColor = UIColor.Yellow };
+		}
+
+		internal void UpdateImage(string path)
+		{
+			using (var image = UIImage.FromFile(path))  // async load, but no caching.
+			{
+				imageView.Image = image;
+			}
+		}
+	}
 }
 

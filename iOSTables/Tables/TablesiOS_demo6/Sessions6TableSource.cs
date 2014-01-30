@@ -39,15 +39,15 @@ namespace TablesDemo
 		// TODO: Step 6c: uncomment to enable navigation to the session detail screen
 
 		// Navigation to the next screen by pushing a a new instance of SessionViewController passing info from the row selected
-//		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
-//		{
-//			var sessionGroup = grouping [indexPath.Section];
-//			var session = sessionGroup.ElementAt (indexPath.Row);
-//			
-//			controller.NavigationController.PushViewController (new SessionViewController (session), true);
-//			
-//			tableView.DeselectRow (indexPath, true);
-//		}
+		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
+		{
+			var sessionGroup = grouping [indexPath.Section];
+			var session = sessionGroup.ElementAt (indexPath.Row);
+			
+			controller.NavigationController.PushViewController (new SessionViewController (session), true);
+			
+			tableView.DeselectRow (indexPath, true);
+		}
 
 		
 		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)

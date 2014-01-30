@@ -83,6 +83,6 @@ Global
 		{D41368CD-DCBE-439A-A9A5-9FA0A73C71B4}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = CollectionViewsiOS_demo1\CollectionViewsiOS_demo1.csproj
+		StartupItem = CollectionViewsiOS_demo5\CollectionViewsiOS_demo5.csproj
 	EndGlobalSection
 EndGlobal

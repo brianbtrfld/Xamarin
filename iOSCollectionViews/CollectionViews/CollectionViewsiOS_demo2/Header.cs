@@ -8,30 +8,33 @@ using MonoTouch.UIKit;
 
 namespace CollectionViewDemo
 {
-	// TODO: Step 2a: uncomment to implement a class that builds a header Supplementary View
-//	public class Header : UICollectionReusableView
-//	{
-//		UILabel label;
-//
-//		// string to display in the label
-//		public string Text {
-//			set {
-//				label.Text = value;
-//			}
-//		}
-//
-//		[Export ("initWithFrame:")]
-//		Header (RectangleF frame) : base (frame)
-//		{
-//			label = new UILabel (){
-//				Frame = new RectangleF (0,0,UIScreen.MainScreen.Bounds.Width, 50),  
-//				BackgroundColor = UIColor.Purple,
-//				TextColor = UIColor.White,
-//				TextAlignment = UITextAlignment.Center,
-//				AutoresizingMask = UIViewAutoresizing.FlexibleWidth
-//			};
-//
-//			AddSubview (label);
-//		}
-//	}
+	// TODO: Step 2a: uncomment to implement a class that builds a header ****Supplementary View****
+	public class Header : UICollectionReusableView
+	{
+		UILabel label;
+		// string to display in the label
+		public string Text
+		{
+			set
+			{
+				label.Text = value;
+			}
+		}
+
+		// NOTE:  presense of Export states objective-c call call this constructor
+		[Export("initWithFrame:")]
+		Header(RectangleF frame) : base(frame)
+		{
+			label = new UILabel()
+			{
+				Frame = new RectangleF(0, 0, UIScreen.MainScreen.Bounds.Width, 50),  
+				BackgroundColor = UIColor.Purple,
+				TextColor = UIColor.White,
+				TextAlignment = UITextAlignment.Center,
+				AutoresizingMask = UIViewAutoresizing.FlexibleWidth
+			};
+
+			AddSubview(label);
+		}
+	}
 }

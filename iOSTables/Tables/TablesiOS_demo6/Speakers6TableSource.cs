@@ -25,15 +25,15 @@ namespace TablesDemo
 		}
 
 		// TODO: Step 6c: uncomment to enable navigation to the speaker detail screen
-//		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
-//		{
-//			// Navigation to the next screen by pushing a a new instance of SpeakerViewController passing info from the row selected
-//			var speaker = data [indexPath.Row];
-//
-//			controller.NavigationController.PushViewController (new SpeakerViewController (speaker), true);
-//
-//			tableView.DeselectRow (indexPath, true);
-//		}
+		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
+		{
+			// Navigation to the next screen by pushing a a new instance of SpeakerViewController passing info from the row selected
+			var speaker = data [indexPath.Row];
+
+			controller.NavigationController.PushViewController (new SpeakerViewController (speaker), true);
+
+			tableView.DeselectRow (indexPath, true);
+		}
 
 		
 		

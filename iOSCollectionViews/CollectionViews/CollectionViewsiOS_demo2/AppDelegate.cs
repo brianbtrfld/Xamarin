@@ -27,8 +27,8 @@ namespace CollectionViewDemo
 			layout = new UICollectionViewFlowLayout () {
 
 				//TODO: Step 2d: uncomment the next 2 lines to adjust for adding "header" Supplementary View
-//				HeaderReferenceSize = new SizeF (UIScreen.MainScreen.Bounds.Width, 50),
-//				SectionInset = new UIEdgeInsets (10,5,10,5),
+				HeaderReferenceSize = new SizeF (UIScreen.MainScreen.Bounds.Width, 50),
+				SectionInset = new UIEdgeInsets (10,5,10,5),
 
 				MinimumInteritemSpacing = 5,
 				MinimumLineSpacing = 5,

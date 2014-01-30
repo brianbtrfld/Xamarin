@@ -16,7 +16,13 @@ namespace TablesDemo
 
 		public DateTime Ends { get; set; }
 
-		public Session ()
+		public Boolean IsFavorite
+		{
+			get;
+			set;
+		}
+
+		public Session()
 		{
 		}
 	}

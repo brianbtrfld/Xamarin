@@ -2,14 +2,19 @@ using System;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 
-namespace TablesDemo {
-
-	public class Application {
+namespace TablesDemo 
+{
+	public class Application 
+	{
 		public static void Main (string[] args)
 		{
-			try {
+			try 
+			{
+				// AppDelegate class name needs to match Register attribute below.
 				UIApplication.Main (args, null, "AppDelegate");
-			} catch (Exception e) {
+			} 
+			catch (Exception e) 
+			{
 				Console.WriteLine (e.ToString ());
 			}
 		}
@@ -25,6 +30,7 @@ namespace TablesDemo {
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 			window.MakeKeyAndVisible ();
 
+			// Always need one RootViewController.
 			window.RootViewController = new SpeakersViewController ();
 			return true;
 		}

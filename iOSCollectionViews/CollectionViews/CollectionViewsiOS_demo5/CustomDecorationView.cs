@@ -9,18 +9,18 @@ using MonoTouch.CoreLocation;
 
 namespace CollectionViewDemo
 {
-	// TODO: Step 5a: build a background view with a MapView 
+	// TODO: Step 5a: build a background view with a MapView
 	public class MapDecorationView : UICollectionReusableView
 	{
 		MKMapView map;
 
-		[Export ("initWithFrame:")]
-		MapDecorationView (RectangleF frame) : base (frame)
+		[Export("initWithFrame:")]
+		MapDecorationView(RectangleF frame) : base(frame)
 		{
 			AutosizesSubviews = true;
 
 			// create a map
-			map = new MKMapView (frame);
+			map = new MKMapView(frame);
 			map.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			map.MapType = MKMapType.Hybrid;
 			map.UserInteractionEnabled = false;
@@ -28,12 +28,12 @@ namespace CollectionViewDemo
 			// set map center and region
 			double lat = 30.2652233534254;
 			double lon = -97.74215460962083;
-			CLLocationCoordinate2D mapCenter = new CLLocationCoordinate2D (lat, lon);
-			MKCoordinateRegion mapRegion = MKCoordinateRegion.FromDistance (mapCenter, 2000, 2000);
+			CLLocationCoordinate2D mapCenter = new CLLocationCoordinate2D(lat, lon);
+			MKCoordinateRegion mapRegion = MKCoordinateRegion.FromDistance(mapCenter, 2000, 2000);
 			map.CenterCoordinate = mapCenter;
 			map.Region = mapRegion;
 
-			AddSubview (map);
+			AddSubview(map);
 		}
 	}
 }

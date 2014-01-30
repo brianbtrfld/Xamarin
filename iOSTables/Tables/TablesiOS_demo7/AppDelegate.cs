@@ -2,15 +2,19 @@ using System;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 
-namespace TablesDemo {
-
-	public class Application {
-		public static void Main (string[] args)
+namespace TablesDemo
+{
+	public class Application
+	{
+		public static void Main(string[] args)
 		{
-			try {
-				UIApplication.Main (args, null, "AppDelegate");
-			} catch (Exception e) {
-				Console.WriteLine (e.ToString ());
+			try
+			{
+				UIApplication.Main(args, null, "AppDelegate");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e.ToString());
 			}
 		}
 	}
@@ -21,13 +25,14 @@ namespace TablesDemo {
 		UIWindow window;
 		UINavigationController evolveNavigationController;
 
-		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
+		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			evolveNavigationController = new UINavigationController ();
-			evolveNavigationController.PushViewController (new FavoritesViewController (), false);
+			// Used mostly to set title on TableView.
+			evolveNavigationController = new UINavigationController();
+			evolveNavigationController.PushViewController(new FavoritesViewController(), false);
 
-			window = new UIWindow (UIScreen.MainScreen.Bounds);
-			window.MakeKeyAndVisible ();
+			window = new UIWindow(UIScreen.MainScreen.Bounds);
+			window.MakeKeyAndVisible();
 			window.RootViewController = evolveNavigationController;
 			return true;
 		}
