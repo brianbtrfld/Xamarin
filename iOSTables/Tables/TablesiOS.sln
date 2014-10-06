@@ -81,6 +81,6 @@ Global
 		{15D8E98D-D803-4CCC-906F-0960D31DD337}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = TablesiOS_demo7\TablesiOS_demo7.csproj
+		StartupItem = TablesiOS_demo5\TablesiOS_demo5.csproj
 	EndGlobalSection
 EndGlobal
