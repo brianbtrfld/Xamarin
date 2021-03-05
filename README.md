@@ -1,4 +1,4 @@
 Xamarin
 =======
 
-Xamarin Research and Proof of Concepts
+Research and Proof of Concepts
